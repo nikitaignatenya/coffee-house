@@ -98,7 +98,7 @@ main article section {
   margin-top: 20px;
   background-image: url(/svg/img-hero.svg);
   width: 1360px;
-  height: 644px;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 40px;
