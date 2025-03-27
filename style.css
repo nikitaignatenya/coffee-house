@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'inter';
+    src: url(/font/Inter_18pt-SemiBold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'inter_italic';
+    src: url(/font/Inter_18pt-SemiBoldItalic.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'inter_reg';
+    src: url(/font/Inter_18pt-Regular.ttf);
+    font-weight: 400;
+}
+
+/* скелет */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: auto;
+  width: 1360px;
+  padding: 20px 40px 100px 40px;
+  background-color: #e1d4c9;
+}
+
+/* скелет headder */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+header .head_right {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* элементы header  */
+
+header nav p {
+    font-family: 'inter';
+    font-weight: 600;
+    font-size: 16px;
+    color: #403f3d;
+  }
+
+header .head_left {
+  background-image: url(/svg/logo.svg);
+  width: 100px;
+  height: 60px;
+  background-repeat: no-repeat;
+}
+
+header .head_right p {
+    color: #403f3d;
+    font-family: 'inter';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+header .head_right .image_coffee {
+  background-image: url(./svg/coffee-cup.svg);
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+/* основная секция */
+
+/* скелет */
+
+main article section div {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px 100px 100px;
+}
+
+/* элементы */
+
+main article section {
+  margin-top: 20px;
+  background-image: url(/svg/img-hero.svg);
+  width: 1360px;
+  height: 644px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 40px;
+}
+
+main article section button {
+  font-style: 'inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  
+
+  background-color: #e1d4c9;
+  width: 200px;
+  height: 64px;
+  padding-top: 20px;
+  padding-right: 78px;
+  padding-bottom: 20px;
+  padding-left: 78px;
+  border-radius: 100px;
+  border: none;
+  margin-top: 40px;
+}
+
+main article section div span {
+  color: #b0907a;
+  font-family: 'inter_italic';
+  font-weight: 600;
+  font-size: 72px;
+}
+
+main article section div .h_1 {
+  color: #e1d4c9;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 72px;
+}
+
+main article section .mp_1 {
+  margin-top: 40px;
+  color: #e1d4c9;
+  font-family: 'Inter_reg';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
