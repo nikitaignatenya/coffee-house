@@ -1,18 +1,18 @@
 @font-face {
   font-family: "inter";
-  src: url(/font/Inter_18pt-SemiBold.ttf);
+  src: url(./font/Inter_18pt-SemiBold.ttf) format("truetype");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "inter_italic";
-  src: url(/font/Inter_18pt-SemiBoldItalic.ttf);
+  src: url(./font/Inter_18pt-SemiBoldItalic.ttf) format("truetype");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "inter_reg";
-  src: url(/font/Inter_18pt-Regular.ttf);
+  src: url(./font/Inter_18pt-Regular.ttf) format("truetype");
   font-weight: 400;
 }
 
@@ -23,16 +23,27 @@
   margin: 0;
 }
 
-body {
-  margin: auto;
-  width: 1360px;
-  padding: 20px 40px 100px 40px;
-  background-color: #e1d4c9;
-}
-
 /* скелет шапки */
 
+body {
+  width: 1360px;
+  margin: auto;
+  background-color: #e1d4c9;
+  padding: 0px 40px 40px 40px;
+}
+
 header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+header .header_fixed {
+  padding-top: 20px;
+  background-color: #e1d4c9;
+  width: 1360px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,13 +56,6 @@ header nav {
   gap: 40px;
 }
 
-header .head_right {
-  display: flex;
-  align-items: flex-start;
-}
-
-/* элементы header  */
-
 /* текст навигации */
 header nav p {
   font-family: "inter";
@@ -60,12 +64,44 @@ header nav p {
   color: #403f3d;
 }
 
+header nav p:hover {
+  font-family: "inter";
+  font-weight: 600;
+  font-size: 16px;
+  color: #403f3d;
+  border-bottom: 2px solid #403f3d;
+  top: 1px;
+}
+
+header nav p:hover {
+  top: 1px;
+  position: relative;
+  border-bottom: 2px solid rgba(64, 63, 61, 1);
+  font-family: "inter";
+  font-weight: 600;
+  font-size: 16px;
+  color: #403f3d;
+}
+
 /* логотип */
 header .head_left {
-  background-image: url(/svg/logo.svg);
+  background-image: url(./svg/logo.svg);
   width: 100px;
   height: 60px;
   background-repeat: no-repeat;
+}
+
+header .head_right {
+  display: flex;
+  align-items: flex-start;
+}
+
+header .head_right:hover {
+  position: relative;
+  border-bottom: 2px solid rgba(64, 63, 61, 1);
+  top: 1px;
+  display: flex;
+  align-items: flex-start;
 }
 
 /* текст меню справа */
@@ -100,8 +136,8 @@ main article section .fs_div {
 
 /* бэкграунд всей секции */
 main article .fs {
-  margin-top: 20px;
-  background-image: url(/svg/img-hero.svg);
+  margin-top: 100px;
+  background-image: url(./svg/img-hero.svg);
   width: 1360px;
   height: 100%;
   background-repeat: no-repeat;
@@ -125,7 +161,6 @@ main article section div .fs_span {
   font-size: 72px;
 }
 
-
 /* параграф */
 
 main article section .mp_1 {
@@ -140,12 +175,14 @@ main article section .mp_1 {
 /* кнопка Menu*/
 
 main article section button {
+  position: relative;
   font-style: "inter";
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
   text-align: center;
 
+  color: rgba(64, 63, 61, 1);
   background-color: #e1d4c9;
   width: 200px;
   height: 64px;
@@ -156,6 +193,16 @@ main article section button {
   border-radius: 100px;
   border: none;
   margin-top: 40px;
+}
+
+main article section button:hover::after {
+  margin-left: 8px;
+  content: "";
+  position: absolute;
+  background-image: url(./svg/coffee-cup-hover.svg);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
 }
 
 /* вторая секция */
@@ -191,12 +238,41 @@ article .ss .icons {
 }
 
 /* иконка слева */
+
 article .ss .icons .icon_left {
-  display: block;
-  background-image: url(./svg/button-icon-dark_left.svg);
-  width: 60px;
-  height: 60px;
-  background-repeat: no-repeat;
+  border: 1px solid rgba(102, 95, 85, 1);
+  border-radius: 100px;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(225, 212, 201, 1);
+  & .arrow_left {
+    display: block;
+    background-image: url(./svg/arrow-left.svg);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+  }
+}
+
+article .ss .icons .icon_left:hover {
+  border: 1px solid rgba(102, 95, 85, 1);
+  border-radius: 100px;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(102, 95, 85, 1);
+  & .arrow_left {
+    background-image: none;
+    background-color: rgba(225, 212, 201, 1);
+    display: block;
+    mask-image: url(./svg/arrow-left.svg);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+  }
 }
 
 /* скелет картнка по центру */
@@ -220,11 +296,39 @@ article .ss .icons .image_middle .image_coffee_ss {
 
 /* иконка справа */
 article .ss .icons .icon_right {
-  display: block;
-  background-image: url(./svg/button-icon-dark_right.svg);
-  width: 60px;
-  height: 60px;
-  background-repeat: no-repeat;
+  border: 1px solid rgba(102, 95, 85, 1);
+  border-radius: 100px;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(225, 212, 201, 1);
+  & .arrow_right {
+    display: block;
+    background-image: url(./svg/arrow-right.svg);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+  }
+}
+
+article .ss .icons .icon_right:hover {
+  border: 1px solid rgba(102, 95, 85, 1);
+  border-radius: 100px;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(102, 95, 85, 1);
+  & .arrow_right {
+    background-image: none;
+    background-color: rgba(225, 212, 201, 1);
+    display: block;
+    mask-image: url(./svg/arrow-right.svg);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Заголовок по картинкой кофе */
@@ -422,6 +526,7 @@ article .fr .fr_left .aa_icon {
 /* скелет apple */
 
 article .fr .fr_left .aa_icon .apple {
+  background-color: rgba(225, 212, 201, 1);
   border-style: solid;
   border-color: #665f55;
   width: 200px;
@@ -431,44 +536,44 @@ article .fr .fr_left .aa_icon .apple {
   display: flex;
   align-items: center;
   margin-right: 20px;
+  &.apple_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+  && .p_4_1 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: #403f3d;
+  }
+  && .p_4_2 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 16px;
+    color: #403f3d;
+  }
+  && .icon_container {
+    width: 36px;
+    height: 36px;
+    margin: 14px 8px 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .apple_icon {
+      background-size: contain;
+      background-image: url(./svg/Icon_apple.svg);
+      width: 26.41px;
+      height: 31.65px;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
-/* иконка apple */
-article .fr .fr_left .aa_icon .apple .apple_icon {
-  background-image: url(./svg/Icon.svg);
-  width: 36px;
-  height: 36px;
-  background-repeat: no-repeat;
-  margin: 14px 8px 14px 20px;
-}
-
-/* текст иконки apple  */
-article .fr .fr_left .aa_icon .apple .apple_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 2px;
-}
-
-article .fr .fr_left .aa_icon .apple .apple_text .p_4_1 {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 10px;
-  text-align: center;
-  color: #403f3d;
-}
-
-article .fr .fr_left .aa_icon .apple .apple_text .p_4_2 {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 16px;
-  color: #403f3d;
-}
-
-/* андроид */
-
-/* скелет андроид */
-article .fr .fr_left .aa_icon .android {
+article .fr .fr_left .aa_icon .apple:hover {
+  background-color: rgba(102, 95, 85, 1);
   border-style: solid;
   border-color: #665f55;
   width: 200px;
@@ -477,40 +582,143 @@ article .fr .fr_left .aa_icon .android {
   border-width: 1px;
   display: flex;
   align-items: center;
+  margin-right: 20px;
+  &.apple_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+  && .p_4_1 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: rgba(225, 212, 201, 1);
+  }
+  && .p_4_2 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(225, 212, 201, 1);
+  }
+  & .icon_container {
+    width: 36px;
+    height: 36px;
+    margin: 14px 8px 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    && .apple_icon {
+      mask-size: contain;
+      background-image: none;
+      mask-image: url(./svg/Icon_apple.svg);
+      background-color: rgba(225, 212, 201, 1);
+      width: 26.41x;
+      height: 31.65px;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
-/* иконка андроид */
-article .fr .fr_left .aa_icon .android .android_icon {
-  background-image: url(./svg/Icon.svg);
-  width: 36px;
-  height: 36px;
-  background-repeat: no-repeat;
-  margin: 14px 8px 14px 20px;
-}
+/* андроид */
 
-/* андроид текст скелет */
-article .fr .fr_left .aa_icon .android .android_text {
+/* скелет андроид */
+article .fr .fr_left .aa_icon .android {
+  background-color: rgba(225, 212, 201, 1);
+  border-style: solid;
+  border-color: #665f55;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  border-width: 1px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 2px;
+  align-items: center;
+  margin-right: 20px;
+  & .android_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+  && .p_4_1 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: #403f3d;
+    text-align: start;
+  }
+  && .p_4_2 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 16px;
+    color: #403f3d;
+  }
+  & .icon_container {
+    width: 36px;
+    height: 36px;
+    margin: 14px 8px 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    && .android_icon {
+      background-image: url(./svg/icon_android.svg);
+      width: 36px;
+      height: 36px;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
-/* андроид текст */
-article .fr .fr_left .aa_icon .android .android_text .p_4_1 {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 10px;
-  text-align: center;
-  color: #403f3d;
-}
-
-article .fr .fr_left .aa_icon .android .android_text .p_4_2 {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 16px;
-  color: #403f3d;
+article .fr .fr_left .aa_icon .android:hover {
+  background-color: rgba(102, 95, 85, 1);
+  border-style: solid;
+  border-color: #665f55;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  &.android_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+  && .p_4_1 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: rgba(225, 212, 201, 1);
+    text-align: start;
+  }
+  && .p_4_2 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(225, 212, 201, 1);
+  }
+  & .icon_container {
+    width: 36px;
+    height: 36px;
+    margin: 14px 8px 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    && .android_icon {
+      background-image: none;
+      background-size: contain;
+      background-color: rgba(225, 212, 201, 1);
+      mask-image: url(./svg/icon_android.svg);
+      width: 36px;
+      height: 36px;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 /* картинка справа */
@@ -521,176 +729,250 @@ article .fr .fr_image_right {
   background-repeat: no-repeat;
 }
 
-/* пятая секция */
+/* footer */
 
-/* скелет */
-footer .foot {
-  display: flex;
-  justify-content: flex-start;
-  gap: 100px;
-  background-color: #665f55;
+footer {
+  width: 1360px;
   border-radius: 40px;
-  padding: 100px;
-  align-items: center;
+  background-color: #665f55;
   margin-top: 100px;
 }
 
-footer .foot .f_left {
+footer .footer_all {
+  padding: 100px 0px 100px 100px;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+footer .footer_left {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 40px;
+  align-items: flex-start;
 }
 
-/* иконки слева скелет */
-footer .foot .f_left .f_icons_left {
-  display: flex;
-  justify-content: flex-start;
-  gap: 12px;
-}
-
-/* кружок первой иконки */
-footer .foot .f_left .f_icons_left .first {
-  border: 1px solid #c1b6ad;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
-
-/* первая иконка */
-footer .foot .f_left .f_icons_left .twitter {
-  background-image: url(./svg/twitter.svg);
-  margin: 18px;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-}
-
-/* кружок второй иконки */
-
-footer .foot .f_left .f_icons_left .second {
-  border: 1px solid #c1b6ad;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
-
-/* вторая иконка */
-
-footer .foot .f_left .f_icons_left .instagram {
-  background-image: url(./svg/instagram.svg);
-  margin: 18px;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-}
-/* кружок третьей иконки */
-footer .foot .f_left .f_icons_left .third {
-  border: 1px solid #c1b6ad;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
-
-/* трятья иконка  */
-
-footer .foot .f_left .f_icons_left .facebook {
-  background-image: url(./svg/facebook.svg);
-  margin: 18px;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-}
-
-/* заголовок слева */
-footer .foot .f_left h2 {
-  font-family: "Inter";
+footer .footer_left h2 {
+  font-style: italic;
+  font-family: "Inter_italic";
   font-weight: 600;
   font-size: 60px;
+  line-height: 125%;
   color: #e1d4c9;
 }
 
-footer .foot .f_left h2 span {
+footer .footer_left span {
+  color: #b0907a;
   font-family: "Inter";
   font-weight: 600;
-  font-style: italic;
   font-size: 60px;
-  color: #b0907a;
+  line-height: 125%;
+}
+
+/* иконки */
+
+footer .footer_left .left_icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+/* круг для иконок */
+
+footer .footer_left .left_icons .footer_sircle {
+  width: 60px;
+  height: 60px;
+  background-color: #665f55;
+  border: 1px solid #c1b6ad;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* иконка твитер */
+
+footer .footer_left .left_icons .footer_sircle .twitter_icon {
+  background-image: url(./svg/twitter.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+footer .footer_left .left_icons .footer_sircle:hover {
+  width: 60px;
+  height: 60px;
+  background-color: #e1d4c9;
+  border: 1px solid #e1d4c9;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .twitter_icon {
+    background-image: none;
+    mask-image: url(./svg/twitter.svg);
+    background-color: #403f3d;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+}
+/* иконка инстаграм */
+
+footer .footer_left .left_icons .footer_sircle .instagram_icon {
+  background-image: url(./svg/instagram.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+footer .footer_left .left_icons .footer_sircle:hover {
+  width: 60px;
+  height: 60px;
+  background-color: #e1d4c9;
+  border: 1px solid #e1d4c9;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .instagram_icon {
+    background-image: none;
+    mask-image: url(./svg/instagram.svg);
+    background-color: #403f3d;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+}
+/* иконка facebook */
+
+footer .footer_left .left_icons .footer_sircle .facebook_icon {
+  background-image: url(./svg/facebook.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+footer .footer_left .left_icons .footer_sircle:hover {
+  width: 60px;
+  height: 60px;
+  background-color: #e1d4c9;
+  border: 1px solid #e1d4c9;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .facebook_icon {
+    background-image: none;
+    mask-image: url(./svg/facebook.svg);
+    background-color: #403f3d;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* футер справа */
-footer .foot .f_right {
-  justify-content: space-between;
+footer .footer_right {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 40px;
 }
 
-/* контейнер снизу */
-footer .foot .f_right .right_bottom {
+footer .footer_right .container {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* первый контейрнер */
-footer .foot .f_right .right_bottom .f_icons_right_1 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* основной парагаф */
+footer .footer_right :nth-child(1) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #e1d4c9;
 }
 
-/* картинка */
-footer .foot .f_right .right_bottom .f_icons_right_1 .fir_1 {
+/* скелет параграф + иконка */
+footer .footer_right .container .all_p {
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+footer .footer_right .container .all_p:hover::after {
+  top: 27px;
+  content: "";
+  position: absolute;
+  background-color: rgba(225, 212, 201, 1);
+  width: 100%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+footer .footer_right .container .first_p {
+  width: 182px;
+}
+footer .footer_right .container .second_p {
+  width: 175px;
+}
+footer .footer_right .container .third_p {
+  width: 262px;
+}
+
+/* первый скелет */
+footer .footer_right .container .first_p .icon_1 {
   background-image: url(./svg/pin-alt.svg);
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
 }
 
-/* второй контейнер */
-footer .foot .f_right .right_bottom .f_icons_right_2 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+footer .footer_right .container .first_p :nth-child(2) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #e1d4c9;
 }
 
-/* картинка */
-footer .foot .f_right .right_bottom .f_icons_right_2 .fir_2 {
+/* второй скелет */
+
+footer .footer_right .container .second_p .icon_2 {
   background-image: url(./svg/phone.svg);
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
 }
 
-/* третий контейнер */
-footer .foot .f_right .right_bottom .f_icons_right_3 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+footer .footer_right .container .second_p :nth-child(2) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #e1d4c9;
 }
 
-/* картинка */
-footer .foot .f_right .right_bottom .f_icons_right_3 .fir_3 {
+/* третий скелет */
+footer .footer_right .container .third_p .icon_3 {
   background-image: url(./svg/clock.svg);
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
 }
 
-/* первый параграф */
-footer .foot .f_right .fp_1 {
-  color: #e1d4c9;
+footer .footer_right .container .third_p :nth-child(2) {
   font-family: "Inter";
   font-weight: 600;
-  font-size: 24px;
-}
-
-/* все параграфы снизу */
-footer .foot .f_right .right_bottom {
-  font-family: 'Inter';
-  font-weight: 600;
   font-size: 16px;
-  color: #E1D4C9;
+  line-height: 150%;
+  color: #e1d4c9;
 }

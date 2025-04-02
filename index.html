@@ -9,7 +9,8 @@
 <body>
     <!-- шапка -->
     <header>
-        <!-- логотип слева -->
+        <div class="header_fixed">
+            <!-- логотип слева -->
         <div class="head_left"></div>
         <!-- навигация -->
         <nav>
@@ -23,6 +24,7 @@
             <p class="menu">Menu</p>
             <!-- картинка -->
             <div class="image_coffee"> </div>
+        </div>
         </div>
     </header>
     <main>
@@ -54,7 +56,9 @@
                 <!-- див 3 картинки и текст -->
                 <div class="icons"> 
                     <!-- иконка слева -->
-                    <div class="icon_left"></div>
+                    <div class="icon_left">
+                        <div class="arrow_left"> </div>
+                    </div>
                     <!-- картинка по центру и текст -->
                     <div class="image_middle">
                         <!-- картинка -->
@@ -71,7 +75,9 @@
                         </div>
                     </div>
                     <!-- иконка справа -->
-                    <div class="icon_right"></div>
+                    <div class="icon_right">
+                        <div class="arrow_right"></div>
+                    </div>
                 </div>
             </section>
             <!-- третья секция -->
@@ -112,7 +118,9 @@
                         <!-- иконки и текст apple -->
                         <div class="apple">
                                 <!-- иконка apple -->
-                                <div class="apple_icon"></div>
+                                <div class="icon_container">
+                                    <div class="apple_icon"></div>
+                                </div>
                                 <!-- текст apple -->
                                 <div class="apple_text">
                                     <p class="p_4_1">Available on the</p>
@@ -123,7 +131,9 @@
                         <!-- иконки и текст android -->
                         <div class="android">
                                     <!-- иконка андроид -->
-                                    <div class="android_icon"></div>
+                                    <div class="icon_container">
+                                        <div class="android_icon"></div>
+                                    </div>
                                     <!-- андроид текст -->
                                     <div class="android_text">
                                         <p class="p_4_1">Available on</p>
@@ -138,61 +148,43 @@
         </article>
     </main>
     <!-- футтер -->
-    <footer> 
-        <!-- футтер секция -->
-        <section class="foot">
-            <!-- футтер слева -->
-            <div class="f_left">
-                <!-- заголовок слева -->
-                <h2> Sip, Savor, Smile. <br>
-                     <span>It’s coffee time! </span>
+    <footer>
+        <div class="footer_all">
+            <div class="footer_left">
+                <h2>
+                     Sip, Savor, Smile. <br>
+                     <span> It’s coffee time! </span>
                 </h2>
-                <!-- иконки слева -->
-                <div class="f_icons_left">
-                    <!-- первый кружок -->
-                    <div class="first">
-                        <!-- первая иконка -->
-                        <div class="twitter"></div>
+                <div class="left_icons">
+                    <div class="footer_sircle">
+                        <div class="twitter_icon"></div>
                     </div>
-                    <!-- второй кружок -->
-                    <div class="second">
-                        <!-- вторая иконка -->
-                        <div class="instagram"></div>
+                    <div class="footer_sircle">
+                        <div class="instagram_icon"></div>
                     </div>
-                    <!-- третий кружок -->
-                    <div class="third">
-                        <!-- третья иконка -->
-                        <div class="facebook"></div>
+                    <div class="footer_sircle">
+                        <div class="facebook_icon"></div>
                     </div>
                 </div>
             </div>
-            <!-- футтер справа -->
-            <div class="f_right">
-                <!-- первый параграф -->
-                <p class="fp_1"> Contact us </p>
-                <!-- контейнер снизу -->
-                <div class="right_bottom">
-                    <!-- первый контейнер -->
-                    <div class="f_icons_right_1">
-                        <!-- картинка -->
-                        <div class="fir_1"></div>
-                        <p>8558 Green Rd.,  LA</p>
+            <div class="footer_right">
+                <p>Contact us</p>
+                <div class="container">
+                    <div class="all_p first_p">
+                        <div class="icon_1"></div>
+                        <p> 8558 Green Rd.,  LA </p>
                     </div>
-                    <!-- второй контейнер -->
-                    <div class="f_icons_right_2">
-                        <!-- картинка -->
-                        <div class="fir_2"></div>
-                        <p>+1 (603) 555-0123</p>
+                    <div class="all_p second_p"> 
+                        <div class="icon_2"></div>
+                        <p>+1 (603) 555-0123 </p>
                     </div>
-                    <!-- третий контейнер -->
-                    <div class="f_icons_right_3">
-                        <!-- картинка -->
-                        <div class="fir_3"></div>
-                        <p>Mon-Sat: 9:00 AM – 23:00 PM</p>
+                    <div class="all_p third_p">
+                        <div class="icon_3"></div>
+                        <p> Mon-Sat: 9:00 AM – 23:00 PM </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </footer>
 </body>
 </html>
