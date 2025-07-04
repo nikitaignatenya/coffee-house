@@ -44,6 +44,28 @@ const arr = [
 ];
 
 let i = 0;
+
+setInterval(() => {
+  i++;
+  if (arr[i]) {
+    img.src = arr[i].src;
+    h4.textContent = arr[i].h4;
+    p_1.textContent = arr[i].p_1;
+    p_2.textContent = arr[i].p_2;
+    l_1.style.backgroundColor = arr[i].l_1_color;
+    l_2.style.backgroundColor = arr[i].l_2_color;
+    l_3.style.backgroundColor = arr[i].l_3_color;
+  } else {
+    i = 0;
+    img.src = arr[i].src;
+    h4.textContent = arr[i].h4;
+    p_1.textContent = arr[i].p_1;
+    p_2.textContent = arr[i].p_2;
+    l_1.style.backgroundColor = arr[i].l_1_color;
+    l_2.style.backgroundColor = arr[i].l_2_color;
+    l_3.style.backgroundColor = arr[i].l_3_color;
+  }
+}, 3000);
 buttonRgight.addEventListener("click", () => {
   i++;
   if (arr[i]) {
